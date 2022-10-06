@@ -18,12 +18,33 @@
     <input type="button" onclick="checkGuess()" value="Check the Guess">
 
 </form>
+<div class="container">
+    <img class="img-fluid" id="image" src="AdmiralButterfly.jpg" style="width: 100px; height: 100px" onclick="swapImage()">
 
-
+</div>
 <script>
 var correct= 0
 var wrong = 0
-
+var useImage = 1;
+        function swapImage(){
+            switch(useImage){
+                case 1:
+                    document.getElementById("image").src = "AdmiralButterfly.jpg";
+                    useImage+=1;
+                    break;
+                case 2:
+                    document.getElementById("image").src = "AtlasMoth.jpg";
+                    useImage+=1;
+                    break;
+                case 3:
+                    document.getElementById("image").src = "Locust.jpg";
+                    useImage=1;
+                    break;
+                default:
+                    document.getElementById("image").src = "AdmiralButterfly.jpg";
+                    break;
+            }
+        }
 function checkGuess(){
 console.log("Getting form values")
 Name = document.getElementById("form_name").value
